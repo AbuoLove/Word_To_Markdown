@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Word_To_Markdown": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Users\\blain\\Desktop\\test_docs\\Ethical Hacking Enumeration.docx"
+    }
+  }
+}

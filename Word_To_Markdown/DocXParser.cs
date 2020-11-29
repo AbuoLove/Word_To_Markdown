@@ -30,7 +30,7 @@ namespace Word_To_Markdown
 		public void process()
 		{
 			// Load docx into memory
-			Package wordPackage = Package.Open(filename, FileMode.Open, FileAccess.Read);
+			Package wordPackage = Package.Open(filename.Trim(), FileMode.Open, FileAccess.Read);
 			using WordprocessingDocument document = WordprocessingDocument.Open(wordPackage); 
 			Body body = document.MainDocumentPart.Document.Body;
 

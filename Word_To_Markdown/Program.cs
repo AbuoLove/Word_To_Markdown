@@ -43,15 +43,31 @@ namespace Word_To_Markdown
 				{
 					foreach (string s in filenames)
 					{
-						DocXParser docXParser = new DocXParser(s);
-						docXParser.process();
+						try
+						{
+							DocXParser docXParser = new DocXParser(s);
+							docXParser.process();
+							Console.WriteLine(s + " succesfully processed.");
+						}
+						catch (Exception e)
+						{
+							Console.WriteLine(e.ToString());
+							Console.WriteLine("Press any key to close the application.");
+							Console.ReadKey();
+							return;
+						}
 					}
 				}
+
+				Console.WriteLine("All provided files processed. Converted Markdown documents are now on your desktop.");
+				Console.WriteLine("Press any key to close the application.");
+				Console.ReadKey();
 			}
 
 			else
 			{
 				Console.Error.WriteLine("Please drop a .docx file or .docx files onto the .exe.");
+				Console.WriteLine("Press any key to close the application.");
 				Console.ReadKey();
 				return;
 			}
